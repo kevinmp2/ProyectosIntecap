@@ -5,6 +5,7 @@
 package Main;
 
 import Model.Conexion;
+import View.ProductoView;
 
 /**
  *
@@ -13,8 +14,16 @@ import Model.Conexion;
 public class Main {
 
     public static void main(String[] args) {
+        
+        ProductoView producto = new ProductoView();
+        
         Conexion conexion = new Conexion();
         conexion.conectarDB();
+        
+        
+        producto.setVisible(true);
+        
+
         
         
         

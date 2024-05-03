@@ -19,6 +19,8 @@ public class ControllerProducto {
         productoModel = new ProductoModel();
     }
     
+    
+    
     public String insertProducto(String nombreProducto, String NoSerie, int existencia){
         productoModel.setNombre(nombreProducto);
         productoModel.setNoSerie(NoSerie);
