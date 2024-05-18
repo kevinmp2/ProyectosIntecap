@@ -1,0 +1,112 @@
+CREATE DATABASE Sistema_bancario;
+
+USE Sistema_bancario;
+
+CREATE TABLE tbUsuario(
+	ID_Usuario INT PRIMARY KEY AUTO_INCREMENT,
+    NOMBRE VARCHAR(100),
+    APELLIDO VARCHAR(100),
+    USUARIO VARCHAR(50),
+    PASSWORD VARCHAR(50)
+);
+
+CREATE TABLE Cliente(
+	ID_Cliente INT PRIMARY KEY AUTO_INCREMENT,
+    CUI INT,
+    NOMBRE VARCHAR(100),
+    APELLIDO VARCHAR(100),
+    TELEFONO INT,
+    DIRECCION VARCHAR(150)
+);
+
+SELECT * FROM Cliente;
+SELECT ID_Cliente, CUI, NOMBRE, APELLIDO, TELEFONO, DIRECCION FROM Cliente;
+SELECT CUI FROM Cliente WHERE CUI = "4556464";
+TRUNCATE TABLE Cliente;
+
+CREATE TABLE Cuenta(
+	ID_Cuenta INT PRIMARY KEY AUTO_INCREMENT,
+    CUI INT,
+    SALDO DOUBLE,
+    FOREIGN KEY(CUI) REFERENCES Cliente(ID_Cliente)
+);
+
+CREATE TABLE Deposito(
+	ID_Deposito INT PRIMARY KEY AUTO_INCREMENT,
+    CUI INT,
+    SALDO DOUBLE,
+    FOREIGN KEY(CUI) REFERENCES Cuenta(ID_Cuenta)
+);
+
+CREATE TABLE Transferencia(
+	ID_Transferencia INT PRIMARY KEY AUTO_INCREMENT,
+    CUI_Origen INT,
+    CUI_Destino INT,
+    MONTO DOUBLE,
+    FOREIGN KEY(CUI_Origen) REFERENCES Cuenta(ID_Cuenta)
+);
+
+CREATE TABLE Pago_servicio(
+	ID_Pago INT PRIMARY KEY AUTO_INCREMENT,
+    CUI INT,
+    TIPO_SERVICIO INT,
+    MONTO DOUBLE,
+    FOREIGN KEY(CUI) REFERENCES Cuenta(ID_Cuenta)
+);
+
+CREATE TABLE Tipo_servicio(
+	ID_Servicio INT PRIMARY KEY AUTO_INCREMENT,
+    TIPO_SERVICIO INT,
+    FOREIGN KEY(TIPO_SERVICIO) REFERENCES Pago_Servicio(ID_Pago)
+);
+
+-- Insertar un usuario para el login
+INSERT INTO tbUsuario(NOMBRE, APELLIDO, USUARIO, PASSWORD) VALUES ("Kevin","Patzan","KevinPatzan", "KevinIntecap2024"); 
+INSERT INTO tbUsuario(NOMBRE, APELLIDO, USUARIO, PASSWORD) VALUES ("samuel","agosto","samuel", "12345"); 
+
+SELECT USUARIO, PASSWORD FROM tbUsuario WHERE USUARIO = "KevinPatzan" AND PASSWORD = "KevinIntecap2024";
+
+SELECT * FROM tbUsuario;
+
+-- PROCEDIMIENTOS ALMACENADOS
+
+CREATE PROCEDURE nuevoCliente(
+	IN Cui INT,
+    IN Nombre VARCHAR(100),
+    IN Apellido VARCHAR(100),
+    IN Telefono INT,
+    IN Direccion VARCHAR(150)
+) INSERT INTO Cliente(CUI, NOMBRE, APELLIDO, TELEFONO, DIRECCION) VALUES (Cui, Nombre, Apellido, Telefono, Direccion);
+
+DELIMITER //
+CREATE PROCEDURE ActualizarCliente(
+    IN p_ID_Cliente INT,
+    IN p_CUI INT,
+    IN p_NOMBRE VARCHAR(100),
+    IN p_APELLIDO VARCHAR(100),
+    IN p_TELEFONO INT,
+    IN p_DIRECCION VARCHAR(150)
+)
+BEGIN
+    UPDATE Cliente
+    SET 
+        CUI = p_CUI,
+        NOMBRE = p_NOMBRE,
+        APELLIDO = p_APELLIDO,
+        TELEFONO = p_TELEFONO,
+        DIRECCION = p_DIRECCION
+    WHERE 
+        ID_Cliente = p_ID_Cliente;
+END //
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE EliminarCliente(
+    IN p_ID_Cliente INT
+)
+BEGIN
+    DELETE FROM Cliente
+    WHERE ID_Cliente = p_ID_Cliente;
+END //
+DELIMITER ;

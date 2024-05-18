@@ -4,26 +4,21 @@
  */
 package Main;
 
-import Model.Conexion;
-import View.ProductoView;
+import View.Login;
 
 /**
  *
  * @author kewin
  */
-public class Main {
+public class main {
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        
-        ProductoView producto = new ProductoView();
-        producto.setVisible(true);
-        
-
-        
-        
-        
-        
-        
+        // TODO code application logic here
+        Login login = new Login();
+        login.setVisible(true);
     }
     
 }
