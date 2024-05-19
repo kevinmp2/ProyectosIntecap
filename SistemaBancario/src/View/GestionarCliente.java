@@ -260,10 +260,17 @@ public class GestionarCliente extends javax.swing.JInternalFrame {
             NuevoClienteModel clienteModel = new NuevoClienteModel();
             NuevoClienteController clienteController = new NuevoClienteController();
             
+            clienteModel.setCui(Integer.parseInt(txt_CUI.getText()));
+            clienteModel.setNombre(txt_NOMBRE.getText().trim());
+            clienteModel.setApellido(txt_APELLIDO.getText().trim());
+            clienteModel.setTelefono(Integer.parseInt(txt_TELEFONO.getText().trim()));
+            clienteModel.setDireccion(txt_DIRECCION.getText().trim());
+            
             if(clienteController.actualizarCliente(clienteModel, idClientes)){
                 JOptionPane.showMessageDialog(null, "Registro Actualizado!");
                 this.CargarTablaClientes();
                 this.Limpiar();
+                
             }else{
                  JOptionPane.showMessageDialog(null, "Error al actualizar!");
             }
