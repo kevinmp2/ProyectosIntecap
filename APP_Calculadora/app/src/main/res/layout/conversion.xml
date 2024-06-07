@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#38D9A9">
+
+    <Button
+        android:id="@+id/buttonLimpiar"
+        android:layout_width="122dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="76dp"
+        android:backgroundTint="#F783AC"
+        android:text="LIMPIAR"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtKB" />
+
+    <Button
+        android:id="@+id/buttonConvertir"
+        android:layout_width="133dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#4DABF7"
+        android:text="CONVERTIR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.398"
+        app:layout_constraintStart_toEndOf="@+id/buttonLimpiar"
+        app:layout_constraintTop_toBottomOf="@+id/txtBYTES" />
+
+    <Button
+        android:id="@+id/buttonCalculadora"
+        android:layout_width="129dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="572dp"
+        android:backgroundTint="#40C057"
+        android:text="CALCULA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+
+    <EditText
+        android:id="@+id/txtGB"
+        android:layout_width="124dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toStartOf="@+id/txtMB"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="    DATA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtMB"
+        android:layout_width="135dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="52dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/txtKB"
+        android:layout_width="128dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="28dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toStartOf="@+id/txtBYTES"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <EditText
+        android:id="@+id/txtBYTES"
+        android:layout_width="133dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="56dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="83dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="60dp"
+        android:text="GB"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.312"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="59dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="128dp"
+        android:text="MB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="87dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="76dp"
+        android:text="KB"
+        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtGB" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="82dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="116dp"
+        android:text="BYTES"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMB" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
