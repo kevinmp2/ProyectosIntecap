@@ -30,7 +30,7 @@ public class Resultado {
         this.resultados = resultados;
     }
 
-    public int getPaginas() {
+    public Integer getPaginas() {
         return paginas;
     }
 
@@ -38,7 +38,7 @@ public class Resultado {
         this.paginas = paginas;
     }
 
-    public int getTotalPaginas() {
+    public Integer getTotalPaginas() {
         return totalPaginas;
     }
 
@@ -46,7 +46,7 @@ public class Resultado {
         this.totalPaginas = totalPaginas;
     }
 
-    public int getTotalResultados() {
+    public Integer getTotalResultados() {
         return totalResultados;
     }
 
