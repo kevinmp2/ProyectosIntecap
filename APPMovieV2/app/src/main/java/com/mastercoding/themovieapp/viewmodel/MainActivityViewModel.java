@@ -5,7 +5,6 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.ViewModel;
 
 import com.mastercoding.themovieapp.model.Movie;
 import com.mastercoding.themovieapp.model.MovieRepository;

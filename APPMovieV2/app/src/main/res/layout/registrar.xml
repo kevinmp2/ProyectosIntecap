@@ -105,10 +105,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Password"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.554" />
 
     <TextView
         android:id="@+id/textView10"
@@ -140,14 +140,14 @@
         android:id="@+id/BtLogin"
         android:layout_width="115dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="28dp"
         android:text="Ingresar"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toEndOf="@+id/BtRegistro"
-        app:layout_constraintTop_toBottomOf="@+id/Password"
-        app:layout_constraintVertical_bias="0.602" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtRegistro"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

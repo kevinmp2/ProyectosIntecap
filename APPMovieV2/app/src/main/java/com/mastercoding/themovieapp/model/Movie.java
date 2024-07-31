@@ -1,9 +1,6 @@
 package com.mastercoding.themovieapp.model;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.BindingAdapter;

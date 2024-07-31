@@ -55,11 +55,27 @@ public class Registrar extends AppCompatActivity {
         });
     }
 
+
     public void saveUsers(){
+
+
         String name = nameuser.getText().toString().trim();
         String lastnm = lastName.getText().toString().trim();
         String em = email.getText().toString().trim();
         String pass = password.getText().toString().trim();
+
+        // Validación de correo electrónico
+        String emailPattern = "^[a-zA-Z0-9._%+-]+@gmail\\.com$";
+        if (!em.matches(emailPattern)) {
+            Toast.makeText(this, "Correo electrónico no válido", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Validación de contraseña (mínimo 8 caracteres)
+        if (pass.length() < 8) {
+            Toast.makeText(this, "La contraseña debe tener al menos 8 caracteres", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         if (!name.isEmpty() && !lastnm.isEmpty() && !em.isEmpty() && !pass.isEmpty()) {
             if (myDatabaseHelper.checkUserExists(em)) {

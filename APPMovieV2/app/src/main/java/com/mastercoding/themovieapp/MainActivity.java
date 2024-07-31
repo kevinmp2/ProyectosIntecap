@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import com.mastercoding.themovieapp.databinding.ActivityMainBinding;
 import com.mastercoding.themovieapp.model.Movie;

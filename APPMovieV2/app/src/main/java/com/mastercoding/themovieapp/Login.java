@@ -74,6 +74,20 @@ public class Login extends AppCompatActivity {
                 String em = email.getText().toString().trim();
                 String pass = password.getText().toString().trim();
 
+                // Validación de correo electrónico
+                String emailPattern = "^[a-zA-Z0-9._%+-]+@gmail\\.com$";
+                if (!em.matches(emailPattern)) {
+                    Toast.makeText(Login.this, "Correo electrónico no válido", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Validación de contraseña (mínimo 8 caracteres)
+                if (pass.length() < 8) {
+                    Toast.makeText(Login.this, "La contraseña debe tener al menos 8 caracteres", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
                 if (!em.isEmpty() && !pass.isEmpty()) {
                     if (myDatabaseHelper.checkUserCredentials(em, pass)) {
                         Intent intent = new Intent(Login.this, MainActivity.class);
