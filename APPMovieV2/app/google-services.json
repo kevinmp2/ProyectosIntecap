@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "68812735211",
+    "project_id": "appmovie-efcf1",
+    "storage_bucket": "appmovie-efcf1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:68812735211:android:07e2381d856867cb93f4ae",
+        "android_client_info": {
+          "package_name": "com.mastercoding.themovieapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApvoanGsJy9aOzn6ze5HNYUAESvGCIGI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

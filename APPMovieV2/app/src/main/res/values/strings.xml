@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TheMovieApp</string>
     <string name="api_key">890a86f5656fdca2767b6be3222e3526</string>
+    <string name="default_web_client_id">68812735211-qjr06dmc1livjpt6pnt26lljf070jhdl.apps.googleusercontent.com</string>
 </resources>

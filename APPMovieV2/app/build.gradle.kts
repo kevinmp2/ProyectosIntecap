@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -53,6 +54,9 @@ dependencies {
     annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
     implementation("androidx.sqlite:sqlite:2.1.0")
+    implementation("com.google.android.gms:play-services-auth:20.4.0")
+    implementation("com.google.firebase:firebase-auth-ktx:22.1.1")
+    implementation("com.google.firebase:firebase-database-ktx:20.2.1")
 
 
 }
