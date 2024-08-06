@@ -6,11 +6,27 @@ import androidx.databinding.Bindable;
 import androidx.databinding.BindingAdapter;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.database.Exclude;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.mastercoding.themovieapp.BR;
 
-public class Movie extends BaseObservable{
+import java.util.HashMap;
+import java.util.Map;
+
+public class Movie extends BaseObservable {
+
+    public Movie() {
+    }
+
+    public Movie(Integer id, String title, String posterPath, String releaseDate, String overview, Double voteAverage) {
+        this.id = id;
+        this.title = title;
+        this.posterPath = posterPath;
+        this.releaseDate = releaseDate;
+        this.overview = overview;
+        this.voteAverage = voteAverage;
+    }
 
     @SerializedName("id")
     @Expose
@@ -36,24 +52,20 @@ public class Movie extends BaseObservable{
     private String overview;
 
 
-
     @SerializedName("vote_average")
     @Expose
     private Double voteAverage;
 
 
-
     @BindingAdapter({"posterPath"})
-    public static void loadImage(ImageView imageView, String imageUrl){
+    public static void loadImage(ImageView imageView, String imageUrl) {
         // Basic Url: "https://image.tmdb.org/t/p/w500/"
-        String imagePath = "https://image.tmdb.org/t/p/w500/"+imageUrl;
+        String imagePath = "https://image.tmdb.org/t/p/w500/" + imageUrl;
 
         Glide.with(imageView.getContext())
                 .load(imagePath)
                 .into(imageView);
     }
-
-
 
 
     @Bindable
@@ -70,8 +82,7 @@ public class Movie extends BaseObservable{
         return overview;
     }
 
-    public void setOverview(String overview)
-    {
+    public void setOverview(String overview) {
         this.overview = overview;
         notifyPropertyChanged(BR.overview);
     }
@@ -116,7 +127,6 @@ public class Movie extends BaseObservable{
         this.voteAverage = voteAverage;
         notifyPropertyChanged(BR.voteAverage);
     }
-
 
 
 

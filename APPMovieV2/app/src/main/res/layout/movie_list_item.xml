@@ -61,13 +61,14 @@
                     android:textSize="12dp"
                     android:textColor="@color/black"
                     android:id="@+id/tvRating"/>
-
             </RelativeLayout>
-
         </androidx.cardview.widget.CardView>
-
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            android:padding="8dp" />
     </LinearLayout>
-
-
 </layout>
 

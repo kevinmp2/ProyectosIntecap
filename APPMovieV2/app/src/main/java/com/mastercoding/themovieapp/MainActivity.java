@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.mastercoding.themovieapp.databinding.ActivityMainBinding;
 import com.mastercoding.themovieapp.model.Movie;
@@ -21,7 +22,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Movie> movies;
+    private ArrayList<Movie> movies = new ArrayList<>();
+    //private ArrayList<Movie> movies;
     private RecyclerView recyclerView;
     private MovieAdapter movieAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
@@ -43,10 +45,6 @@ public class MainActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this)
                 .get(MainActivityViewModel.class);
 
-        getPopularMovies();
-
-
-
         swipeRefreshLayout = binding.swipeLayout;
         swipeRefreshLayout.setColorSchemeResources(R.color.black);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -56,7 +54,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        recyclerView = binding.recyclerview;
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
+        movieAdapter = new MovieAdapter(this, movies);
+        recyclerView.setAdapter(movieAdapter);
+
+        movieAdapter.setOnItemClickListener(new MovieAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Movie movie) {
+                viewModel.saveMovieToFirebase(movie);
+                Toast.makeText(MainActivity.this, "Película guardada", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        getPopularMovies();
     }
 
     private void getPopularMovies() {
@@ -85,8 +98,6 @@ public class MainActivity extends AppCompatActivity {
         // notify an adapter associated with a RecyclerView
         // that the underlying dataset hase changed
         movieAdapter.notifyDataSetChanged();
-
-
 
     }
 }

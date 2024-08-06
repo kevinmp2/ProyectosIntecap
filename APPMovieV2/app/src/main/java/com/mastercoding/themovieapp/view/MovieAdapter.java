@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
@@ -18,7 +19,9 @@ import java.util.ArrayList;
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder>{
 
     private Context context;
-    private ArrayList<Movie> movieArrayList;
+    private ArrayList<Movie> movieArrayList = new ArrayList<>();
+    //private ArrayList<Movie> movieArrayList;
+    private OnItemClickListener onItemClickListener;
 
     public MovieAdapter(Context context, ArrayList<Movie> movieArrayList) {
         this.context = context;
@@ -42,11 +45,28 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
         Movie movie = movieArrayList.get(position);
         holder.movieListItemBinding.setMovie(movie);
+
+        holder.movieListItemBinding.saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onItemClickListener != null) {
+                    onItemClickListener.onItemClick(movie);
+                }
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return movieArrayList.size();
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(Movie movie);
     }
 
 
@@ -60,18 +80,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
             movieListItemBinding.getRoot().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
                     int position = getAdapterPosition();
-
-
                 }
             });
-
-
-
-
-
-
         }
     }
 }
