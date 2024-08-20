@@ -128,6 +128,7 @@ public class LibrosView extends javax.swing.JFrame {
         MenuPrincipal menuPrincipal = new MenuPrincipal();
         menuPrincipal.setVisible(true);
         menuPrincipal.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_BTRegresarActionPerformed
 
     private void BTGuardarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTGuardarLibroActionPerformed

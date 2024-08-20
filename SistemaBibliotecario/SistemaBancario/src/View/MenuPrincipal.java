@@ -38,7 +38,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         BTSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 500));
+        setMinimumSize(new java.awt.Dimension(502, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -70,6 +70,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().add(BTUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 170, 30));
 
         BTSalir.setText("SALIR  DEL SISTEMA");
+        BTSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTSalirActionPerformed(evt);
+            }
+        });
         getContentPane().add(BTSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 320, 180, 30));
 
         pack();
@@ -83,6 +88,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         libroView.setVisible(true);
         libroView.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_BTLibroActionPerformed
 
     private void BTAsignarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTAsignarActionPerformed
@@ -97,7 +103,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         
         usuarioView.setVisible(true);
         usuarioView.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_BTUsuarioActionPerformed
+
+    private void BTSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTSalirActionPerformed
+        // TODO add your handling code here:
+       System.exit(0);
+    }//GEN-LAST:event_BTSalirActionPerformed
 
     /**
      * @param args the command line arguments

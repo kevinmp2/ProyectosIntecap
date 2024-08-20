@@ -92,6 +92,7 @@ public class UsuarioView extends javax.swing.JFrame {
         MenuPrincipal menuPrincipal = new MenuPrincipal();
         menuPrincipal.setVisible(true);
         menuPrincipal.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_BTRegresarActionPerformed
 
     private void BTGuardarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTGuardarUsuarioActionPerformed
