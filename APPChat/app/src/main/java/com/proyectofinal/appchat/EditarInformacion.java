@@ -229,7 +229,7 @@ public class EditarInformacion extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String nombre = "" + snapshot.child("nombre").getValue();
-                        String image = "" + snapshot.child("Image").getValue();
+                        String image = "" + snapshot.child("imagen").getValue();
 
                         binding.etNombre.setText(nombre);
 

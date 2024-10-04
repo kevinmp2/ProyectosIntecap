@@ -60,6 +60,15 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:text="@string/tv_recuperar_cuenta"
+        android:id="@+id/tv_recuperar_cuenta">
+    </TextView>
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/bt_ingresar"
         android:text="@string/bt_ingresar"

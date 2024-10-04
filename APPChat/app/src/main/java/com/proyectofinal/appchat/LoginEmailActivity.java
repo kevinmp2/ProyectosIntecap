@@ -48,6 +48,13 @@ public class LoginEmailActivity extends AppCompatActivity {
             }
         });
 
+        binding.tvRecuperarCuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginEmailActivity.this, OlvidasteContrasenha.class));
+            }
+        });
+
         binding.txtViewRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

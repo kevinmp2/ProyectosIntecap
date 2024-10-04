@@ -124,7 +124,7 @@ public class RegistroEmailActivity extends AppCompatActivity {
         datosUsuario.put("nombre", nombreUsuario);
         datosUsuario.put("email", emailUsuario);
         datosUsuario.put("TiempoRegistro", timeRegistro);
-        datosUsuario.put("Proveedor", "Emial");
+        datosUsuario.put("Proveedor", "Email");
         datosUsuario.put("Estado", "Online");
         datosUsuario.put("Image", "");
 

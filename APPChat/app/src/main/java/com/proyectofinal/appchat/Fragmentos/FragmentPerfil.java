@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.proyectofinal.appchat.CambiarPassword;
 import com.proyectofinal.appchat.Constantes;
 import com.proyectofinal.appchat.EditarInformacion;
 import com.proyectofinal.appchat.LoginActivity;
@@ -76,6 +77,13 @@ public class FragmentPerfil extends Fragment {
                 getActivity().finishAffinity();
             }
         });
+
+        binding.btnCambiarPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Fcontext, CambiarPassword.class));
+            }
+        });
     }
 
     private void cargarInformacion() {
@@ -89,7 +97,7 @@ public class FragmentPerfil extends Fragment {
                         String email = "" + snapshot.child("email").getValue();
                         String proveedor = "" + snapshot.child("Proveedor").getValue();
                         String tiempo_registro = "" + snapshot.child("TiempoRegistro").getValue();
-                        String image = "" + snapshot.child("Image").getValue();
+                        String image = "" + snapshot.child("imagen").getValue();
 
                         if (tiempo_registro.equals("null")){
                             tiempo_registro = "0";
@@ -106,6 +114,10 @@ public class FragmentPerfil extends Fragment {
                                 .load(image)
                                 .placeholder(R.drawable.icon_img_perfil)
                                 .into(binding.ivPerfil);
+
+                        if(proveedor.equals("Email")){
+                            binding.btnCambiarPass.setVisibility(View.VISIBLE);
+                        }
 
                     }
 

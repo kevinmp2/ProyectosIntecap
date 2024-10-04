@@ -30,6 +30,20 @@
     <string name="txt_titulo_edit">Editar Informacion</string>
     <string name="bt_actualizar">Actualizar</string>
     <string name="bt_actualizar_info">Actualizar</string>
-
+    <string name="tv_recuperar_cuenta"> Olvidaste la contrasenha? <b>Recuperar</b></string>
+    <string name="txt_olvide_pass">Olvide contrasenha</string>
+    <string name="txt_ingrese_email">Ingrese email para el envio de las instrucciones de recuperacion</string>
+    <string name="btn_enviar">Enviar</string>
+    <string name="btn_cambiar_pass">Cambiar contrasenha</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_cmabiar_pass">Cambiar contrasenha</string>
+    <string name="txt_contrasenha_actual">Constrasenha Actual</string>
+    <string name="txt_contrasenha_nueva">Constrasenha Nueva</string>
+    <string name="txt_contrasenha_repetir">Repetir contrasenha</string>
+    <string name="btn_cambiar">Cambiar</string>
+    <string name="item_uid">UID Usuario</string>
+    <string name="item_nombre">Nombre Usuario</string>
+    <string name="item_email">Email Usuario</string>
+    <string name="txt_buscar_usuario">Buscar usuario</string>
+
 </resources>
