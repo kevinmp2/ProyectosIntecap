@@ -46,11 +46,11 @@ public class Tarea {
 
     @Override
     public String toString() {
-        return "Tarea{" +
-                "descripcion='" + descripcion + '\'' +
+        return "Tarea:" +
+                "  descripcion= " + descripcion  +
                 ", completada=" + completada +
                 ", prioridad=" + prioridad +
-                '}';
+                '.';
     }
     
 }
