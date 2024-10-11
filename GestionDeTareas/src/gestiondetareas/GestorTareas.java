@@ -27,9 +27,9 @@ public class GestorTareas {
     public void eliminarTarea(int indice) {
         if (indice >= 0 && indice < tareas.size()) {
             tareas.remove(indice);
-            System.out.println("Tarea eliminada con éxito.");
+            System.out.println("Tarea eliminada con exito.");
         } else {
-            System.out.println("Índice de tarea inválido.");
+            System.out.println("Índice de tarea invalido.");
         }
     }
 
@@ -47,7 +47,7 @@ public class GestorTareas {
             tareas.get(indice).completar();
             System.out.println("Tarea completada.");
         } else {
-            System.out.println("Índice de tarea inválido.");
+            System.out.println("Indice de tarea invalido.");
         }
     }
 
@@ -56,9 +56,9 @@ public class GestorTareas {
             Tarea tarea = tareas.get(indice);
             tarea.setDescripcion(nuevaDescripcion);
             tarea.setPrioridad(nuevaPrioridad);
-            System.out.println("Tarea modificada con éxito.");
+            System.out.println("Tarea modificada con exito.");
         } else {
-            System.out.println("Índice de tarea inválido.");
+            System.out.println("Indice de tarea invalido.");
         }
     }
 
@@ -67,27 +67,32 @@ public class GestorTareas {
         int opcion;
 
         do {
-            System.out.println("Menú de Gestión de Tareas:");
+            System.out.println("Menu Gestion De Tareas:");
             System.out.println("1. Agregar tarea");
             System.out.println("2. Eliminar tarea completada");
             System.out.println("3. Mostrar tareas pendientes");
             System.out.println("4. Completar tarea");
             System.out.println("5. Modificar tarea");
             System.out.println("6. Salir");
-            System.out.print("Selecciona una opción: ");
+            System.out.print("Selecciona una opcion: ");
             opcion = scanner.nextInt();
 
             switch (opcion) {
                 case 1:
-                    System.out.print("Ingresa la descripción de la tarea: ");
-                    scanner.nextLine(); // Consumir nueva línea
+                    System.out.print("Ingresa la tarea: ");
+                    scanner.nextLine(); 
                     String descripcion = scanner.nextLine();
                     System.out.print("Ingresa la prioridad de la tarea (1-5): ");
                     int prioridad = scanner.nextInt();
-                    agregarTarea(descripcion, prioridad);
+                    if (prioridad > 5 ) {
+                        System.out.println("El maximo de prioridad es 5");
+                    } else {
+                        agregarTarea(descripcion, prioridad);
+                    }
+
                     break;
                 case 2:
-                    System.out.print("Ingresa el índice de la tarea a eliminar: ");
+                    System.out.print("Ingresa el indice de la tarea a eliminar: ");
                     int indiceEliminar = scanner.nextInt();
                     eliminarTarea(indiceEliminar);
                     break;
@@ -95,15 +100,15 @@ public class GestorTareas {
                     mostrarTareas();
                     break;
                 case 4:
-                    System.out.print("Ingresa el índice de la tarea a completar: ");
+                    System.out.print("Ingresa el indice de la tarea a completar: ");
                     int indiceCompletar = scanner.nextInt();
                     completarTarea(indiceCompletar);
                     break;
                 case 5:
                     System.out.print("Ingresa el índice de la tarea a modificar: ");
                     int indiceModificar = scanner.nextInt();
-                    scanner.nextLine(); // Consumir nueva línea
-                    System.out.print("Ingresa la nueva descripción: ");
+                    scanner.nextLine(); 
+                    System.out.print("Ingresa la nueva descripcion: ");
                     String nuevaDescripcion = scanner.nextLine();
                     System.out.print("Ingresa la nueva prioridad (1-5): ");
                     int nuevaPrioridad = scanner.nextInt();
@@ -113,7 +118,7 @@ public class GestorTareas {
                     System.out.println("Saliendo...");
                     break;
                 default:
-                    System.out.println("Opción inválida.");
+                    System.out.println("Opción invalida.");
             }
         } while (opcion != 6);
 
