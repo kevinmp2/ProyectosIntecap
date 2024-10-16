@@ -3,22 +3,21 @@ import java.util.List;
 import java.util.Stack;
 
 public class ReservaController {
-    private Stack<Reserva> reservasRecientes;
+    private Stack<ReservaModel> reservasRecientes;
 
     public ReservaController() {
         reservasRecientes = new Stack<>();
     }
 
-    public void agregarReserva(Reserva reserva) {
-        reservasRecientes.push(reserva);
+    public void agregarReserva(ReservaModel reservaModel) {
+        reservasRecientes.push(reservaModel);
     }
 
-    public List<Reserva> getReservas() {
+    public List<ReservaModel> getReservas() {
         return new ArrayList<>(reservasRecientes);
     }
 
-    // Método para eliminar una reserva
-    public void eliminarReserva(Reserva reserva) {
-        reservasRecientes.remove(reserva);
+    public void eliminarReserva(ReservaModel reservaModel) {
+        reservasRecientes.remove(reservaModel);
     }
 }
