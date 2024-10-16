@@ -1,14 +1,14 @@
-public class Reserva {
+public class ReservaModel {
     private String evento;
     private String fecha;
     private String cliente;
     private String estado;
 
-    public Reserva(String evento, String fecha, String cliente) {
+    public ReservaModel(String evento, String fecha, String cliente) {
         this.evento = evento;
         this.fecha = fecha;
         this.cliente = cliente;
-        this.estado = "Pendiente"; // Estado por defecto
+        this.estado = "Pendiente";
     }
 
     // Getters y setters
