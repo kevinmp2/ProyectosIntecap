@@ -1,6 +1,7 @@
-package com.proyectofinal.appchat;
+package com.proyectofinal.appchat.Adaptadores;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.proyectofinal.appchat.Chat.ChatActivity;
+import com.proyectofinal.appchat.R;
+import com.proyectofinal.appchat.Usuario;
 
 import java.util.List;
 
@@ -53,6 +57,16 @@ public class AdaptadorUsuario  extends  RecyclerView.Adapter<AdaptadorUsuario.Vi
         } catch (Exception e) {
             //Toast.makeText(context, "Error viewHolder: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ChatActivity.class);
+                intent.putExtra("uid", holder.UID.getText());
+                Toast.makeText(context, "Usuario selecionado" + holder.nombre.getText(), Toast.LENGTH_SHORT).show();
+                context.startActivity(intent);
+            }
+        });
 
 
 
