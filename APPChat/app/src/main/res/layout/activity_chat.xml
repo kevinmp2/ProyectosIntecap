@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Chat.ChatActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <ImageButton
+            android:id="@+id/Ibregresar"
+            android:padding="10dp"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/icon_regresar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </ImageButton>
+        
+        <de.hdodenhof.circleimageview.CircleImageView
+
+            android:id="@+id/toolbarIV"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_usuario"
+            android:layout_toStartOf="@+id/txt_nombre_usuarios"
+            android:layout_marginEnd="7dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp">
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+        <TextView
+            android:id="@+id/txt_nombre_usuarios"
+            android:text="@string/txt_nombres"
+            android:layout_centerInParent="true"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <View
+            android:background="#ccc"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="1dp">
+
+        </View>
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/chatsRV"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_below="@+id/toolbarRl"
+        android:padding="5dp"
+        tools:listitem="@layout/item_chat_izquierda"
+        android:layout_above="@+id/View2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <RelativeLayout
+        android:id="@+id/RL_mensaje"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+
+            android:id="@+id/Et_mensaje_chat"
+            android:hint="@string/mensaje_chat"
+            android:padding="10dp"
+            android:layout_toStartOf="@+id/adjuntarFAB"
+            android:inputType="textMultiLine|text|textCapSentences"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </EditText>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/adjuntarFAB"
+            android:layout_centerVertical="true"
+            app:fabSize="mini"
+            android:elevation="0dp"
+            android:src="@drawable/icon_image_chat"
+            android:layout_marginEnd="7dp"
+            android:layout_toStartOf="@+id/enviarFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+            android:id="@+id/enviarFAB"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            app:fabSize="mini"
+            android:elevation="0dp"
+            android:src="@drawable/icon_enviar_chat"
+            android:layout_height="wrap_content">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/View2"
+        android:background="#ccc"
+        android:layout_above="@+id/RL_mensaje"
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+    </View>
+
+</RelativeLayout>

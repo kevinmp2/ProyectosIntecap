@@ -45,5 +45,10 @@
     <string name="item_nombre">Nombre Usuario</string>
     <string name="item_email">Email Usuario</string>
     <string name="txt_buscar_usuario">Buscar usuario</string>
+    <string name="txt_nombres">Nombres</string>
+    <string name="mensaje_chat">Escriba algo</string>
+    <string name="tv_tiempo_mensaje">dd/MM/yyyy hh:mm</string>
+    <string name="etBuscar">Buscar</string>
+    <string name="tvFecha">dd/MM/yyyy</string>
 
 </resources>
